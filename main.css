@@ -1,0 +1,44 @@
+
+h1{
+    text-align: center;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+input{
+    border-radius: 20px;
+}
+
+.info{
+    padding: 20px;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    color:green;
+    
+}
+
+.info span {
+    color: black;
+}
+#btn {
+   padding: 10px 20px;
+  font-size: 15px;
+  text-align: center;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 6px #999;
+}
+
+#btn:hover {background-color: #3e8e41}
+
+#btn:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+#poster{
+    padding:5px;
+    border:5px solid #021a40;
+    border-radius: 50px;
+}

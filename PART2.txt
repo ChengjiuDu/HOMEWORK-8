@@ -1,0 +1,138 @@
+1 What does AJAX stand for?
+
+AJAX stands for Asynchronous JavaScript and XML.
+
+2 What does XML stand for?
+
+XML stands for eXtensible Markup Language. XML is a markup language much like HTML.
+
+
+3 What object does AJAX use to request data from the server?
+
+AJAX uses a built-in browser XMLHttpRequest object to request data from the server.
+
+4 What is the special feature of AJAX that makes developers like to work with it? Hint: It has to do with enhancing the User Experience (UX).
+
+AJAX allows web pages to be updated asynchronously by exchanging data with a web server behind the scenes. This means that it is possible to only update parts of a page instead of reloading the whole page, which is not optimal for the User Experience (UX).
+
+5 Explain the basic five steps involved in the execution of an AJAX XMLHttpRequest between the browser and the server.
+
+* An event occurs on the page. The page is loaded, or a button is clicked.
+* An XMLHttpRequest object sends a request to the server.
+* The server sends a response back to the web page that made the request.
+* The response is read by JavaScript.
+* JavaScript executes the page update.
+
+6 What makes up the core of AJAX?
+
+XMLHttpRequest object is the core of AJAX. 
+
+7 What is the XMLHttpRequest Object used for?
+
+The XMLHttpRequest object is used to exchange data with a web server behind the scenes (asynchronously). This means that it is possible to update parts of a page instead of the whole page.
+
+
+8 What is the syntax for XMLHttpRequest()?
+
+variable = new XMLHttpRequest();
+
+9 Give me an example of XMLHttpRequest(). Use your project code please.
+
+const xhttps = new XMLHttpRequest()
+
+10 What must be called before any other method calls and why?
+
+The XMLHttpRequest() constructor must be called before any other method calls because it initializes an XMLHttpRequest (object).
+
+11 In the OMDB Api project, even though the OMDB Api is served over http, we use https. Why?
+
+because these days, on a live server, you cannot use http anymore. I have to use https for the omdb api link, even though it itself is not over https.
+
+12 What keyword is used to initialize the XMLHttpRequest object?
+
+The new keyword 
+
+13 What does new XMLHttpRequest() create?
+
+creates a new XMLHttpRequest object.
+
+
+14 What are the 5 things that the new keyword does?
+
+* It is used to create an object from a constructor function such as XMLHttpRequest().
+* It sets the new object's internal, inaccessible (aka private), [[prototype]] property to be the constructor function's external, accessible, prototype object. Every function object automatically has a prototype property.
+* It executes the constructor function, using the newly created object whenever this is mentioned.
+* The new keyword makes the this keyword point to the newly created object. The constructor function refers to the function that follows the new keyword.
+* It returns this if the function does not return its own object.
+
+15 Using code from your project, give me an example of this being returned due to the use of the new keyword with XMLHttpRequest() to create an instance of the XMLHttpRequest Object.
+
+ xhttps.onreadystatechange = function () {
+        if(this.readyState === 4 && this.status === 200) {
+            console.log(this.responseText);
+            console.log(JSON.parse(this.responseText));
+            const data = JSON.parse(this.responseText);
+            
+            document.getElementById("poster").src = data.Poster;
+            document.getElementById("director").innerHTML = data.Director;
+            document.getElementById("writer").innerHTML = data.Writer;
+            document.getElementById("actors").innerHTML = data.Actors;
+            document.getElementById("plot").innerHTML = data.Plot;
+            document.getElementById("country").innerHTML = data.Country;
+
+16 Describe what the XMLHttpRequest.open() method does.
+
+XMLHttpRequest.open(): initializes a newly-created request, or re-initializes an existing one.
+
+
+17 Using code from your project, give me an example of XMLHttpRequest.open().
+
+xhttps.open("GET", url, true);
+
+18 Tell me what the values passed to the open() method are for, and give me the parameters they represent the values (aka arguments) of. Hint: part of the answer may reside in the slide deck and inside the Related Resources links at the end of the deck, and part will reside in the README.md of the week 8 homework repository. You will have come across the information while reading the instructions for going through the steps of building your project.
+
+-"GET" is the method (the value of the first parameter passed to open()) we are using. We are requesting to "GET" data from the OMDB Api.
+-url is the url we are sending our request to (the value of the second parameter passed in to open()).
+-true means that we are making the request asynchronously (the value of the third parameter passed to open()).
+
+19 Using code from your project, give me an example of XMLHttpRequest.send().
+
+xhttps.send();
+
+20 Tell me if there are any values passed to our send() method. What optionally could be passed to the method, and why do we NOT have to pass this optional parameter/argument to our send() method?
+
+send() accepts a parameter which lets you specify the request's
+   body. This is primarily used for requests such as PUT. If the
+   request method is GET or HEAD, the body parameter is ignored
+   and the request body is set to null. The body parameter is not
+   ignored with requests such as PUT because the PUT request
+   modifies the body content. GET and HEAD do not.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
